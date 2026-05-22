@@ -1,4 +1,4 @@
-# AI Business Decision Engine — Uber Rides Intelligence
+# AI Business Decision Engine - Uber Rides Intelligence
 
 An AI-powered analytics platform that analyzes the first 1,000 rows of an Uber trips dataset
 and generates executive-grade insights for a ride-booking platform.
@@ -7,7 +7,7 @@ and generates executive-grade insights for a ride-booking platform.
 
 ### 1. Decision Brief Generator
 Produces a structured executive brief covering situation summary, key findings, operational
-risks, business opportunities, five recommended actions, and a board-level recommendation —
+risks, business opportunities, five recommended actions, and a board-level recommendation -
 grounded entirely in the computed data.
 
 ### 2. Auto-Analyst
@@ -23,7 +23,7 @@ Automatically detects and explains 8 operational patterns:
 
 ### 3. Insight Summary
 Generates three data-backed executive takeaways, one critical operational risk,
-and one highest-priority recommended action — formatted for CEO-level review.
+and one highest-priority recommended action - formatted for CEO-level review.
 
 ## Project Structure
 
@@ -47,7 +47,7 @@ project/
 │   ├── ai/
 │   │   ├── llm_client.py           # OpenAI wrapper (model, temperature, error handling)
 │   │   ├── prompts.py              # Three structured prompt templates
-│   │   └── insight_generator.py    # Prompt orchestration — ties analytics to LLM
+│   │   └── insight_generator.py    # Prompt orchestration - ties analytics to LLM
 │   ├── utils/
 │   │   ├── logger.py               # Structured logging across all modules
 │   │   └── helpers.py              # Formatting utilities
@@ -89,7 +89,7 @@ pytest tests/ -v
 
 | Section | Content |
 |---|---|
-| Platform KPIs | 9 metric cards — trips, revenue, cancellations, no-shows, lost revenue, avg fare/distance/duration |
+| Platform KPIs | 9 metric cards - trips, revenue, cancellations, no-shows, lost revenue, avg fare/distance/duration |
 | City Performance | Revenue by city · Cancellation rate by city |
 | Operational Patterns | Hourly booking volume · Cancellation rate by hour with peak marker |
 | Market Insights | Payment method distribution · Trip distance segmentation |
@@ -101,9 +101,9 @@ pytest tests/ -v
 
 | Decision | Rationale |
 |---|---|
-| `UberDataAnalyzer` with static methods | Stateless analytics — no side effects, fully testable |
+| `UberDataAnalyzer` with static methods | Stateless analytics - no side effects, fully testable |
 | `UberAnalyticsResult` dataclass | Single typed object passed through the entire pipeline |
-| `build_context_string()` on analyzer | Serialises computed metrics into LLM-ready text — keeps prompts data-grounded |
+| `build_context_string()` on analyzer | Serialises computed metrics into LLM-ready text - keeps prompts data-grounded |
 | Three separate prompt templates | Each AI task has a distinct role, structure, and output contract |
 | `st.session_state` for AI outputs | AI results persist across Streamlit reruns without re-calling the API |
 | `@st.cache_data` on data load and analytics | Prevents re-reading and re-computing on every UI interaction |
